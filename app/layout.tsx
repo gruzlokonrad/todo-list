@@ -1,7 +1,7 @@
 import Navbar from '@/Components/Navbar'
 import './globals.css'
 import { Poppins } from '@next/font/google'
-import Container from '@/Components/Container'
+import { UserProvider } from '@auth0/nextjs-auth0/client';
 
 const poppins = Poppins({
   weight: ['400', '700'],
@@ -20,10 +20,11 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body className='bg-neutral-100 min-h-screen bg-yellow-400'>
-        <Navbar />
-        <h1 className={`${poppins.className} text-center text-3xl p-10`}>Todo App</h1>
-        {children}
+      <body className={`${poppins.className}`}>
+        <UserProvider>
+          <Navbar />
+          {children}
+        </UserProvider>
       </body>
     </html>
   )

@@ -1,7 +1,9 @@
 @tailwind base;
 
 @layer base {
-  
+  body {
+    @apply flex flex-col h-screen bg-yellow-400;
+  }
 }
 
 @tailwind components;
