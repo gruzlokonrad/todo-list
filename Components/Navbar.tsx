@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
 'use client'
-import Link from 'next/link'
+
 import React from 'react'
 import Container from './Container'
 import { FaUserCircle } from 'react-icons/fa';
@@ -15,7 +15,7 @@ const Navbar = () => {
     return (
       <div className='flex gap-x-2 items-center'>
         <p>
-          Welcome {user?.name}!
+          Welcome {user?.nickname}!
         </p>
         <a href="/api/auth/logout">
           <Button>
